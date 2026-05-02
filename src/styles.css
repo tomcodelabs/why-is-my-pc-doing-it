@@ -92,6 +92,26 @@ button:disabled {
   gap: 12px;
 }
 
+.mode-toggle {
+  background: #111722;
+  border: 1px solid #252b3a;
+  border-radius: 7px;
+  display: flex;
+  padding: 3px;
+}
+
+.mode-toggle button {
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  padding: 6px 10px;
+}
+
+.mode-toggle button.active {
+  background: #263044;
+  color: #e5e7eb;
+}
+
 .updated-at {
   font-size: 13px;
 }
@@ -111,7 +131,8 @@ button:disabled {
 }
 
 .overview-card,
-.process-panel {
+.process-panel,
+.storage-panel {
   background: #141925;
   border: 1px solid #252b3a;
   border-radius: 8px;
@@ -146,6 +167,61 @@ button:disabled {
   min-height: 0;
 }
 
+.storage-list {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  padding: 16px;
+}
+
+.storage-row {
+  background: #171b24;
+  border: 1px solid #252b3a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+}
+
+.storage-main,
+.storage-detail {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.storage-main strong {
+  display: block;
+  font-size: 16px;
+}
+
+.storage-main span,
+.storage-detail,
+.empty-state {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.storage-bar {
+  background: #101620;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.storage-bar span {
+  background: #6fa88a;
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+}
+
+.empty-state {
+  padding: 2px 0;
+}
+
 .panel-header {
   align-items: center;
   border-bottom: 1px solid #252b3a;
@@ -168,9 +244,18 @@ button:disabled {
   border-bottom: 1px solid #202636;
   display: grid;
   gap: 16px;
-  grid-template-columns: minmax(220px, 1fr) 96px 96px 120px;
-  min-height: 38px;
+  min-height: 48px;
   padding: 0 16px;
+}
+
+.process-row.simple {
+  grid-template-columns: minmax(150px, 0.8fr) minmax(260px, 1.4fr) 82px minmax(132px, 0.8fr) 82px 96px;
+}
+
+.process-row.advanced {
+  grid-template-columns:
+    minmax(150px, 0.8fr) minmax(250px, 1.2fr) 82px minmax(132px, 0.7fr)
+    82px 96px 78px minmax(260px, 1.4fr);
 }
 
 .process-row:last-child {
@@ -188,8 +273,46 @@ button:disabled {
   top: 0;
 }
 
-.process-name {
+.process-name,
+.process-explanation,
+.process-hint,
+.process-path {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.process-explanation,
+.process-hint,
+.process-path {
+  color: #b6bfcc;
+  font-size: 13px;
+}
+
+.process-path {
+  color: #8f98a8;
+}
+
+.status-badge {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  min-width: 62px;
+  padding: 5px 8px;
+}
+
+.status-badge.normal {
+  background: #17251e;
+  border-color: #254735;
+  color: #9bd3ae;
+}
+
+.status-badge.check {
+  background: #272311;
+  border-color: #51441e;
+  color: #e6ca77;
 }
