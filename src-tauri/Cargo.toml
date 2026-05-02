@@ -1,0 +1,19 @@
+[package]
+name = "why-is-my-pc-doing-it"
+version = "0.1.0"
+description = "A small desktop app to see what your PC is doing."
+authors = ["Why is my PC doing it contributors"]
+edition = "2021"
+
+[lib]
+name = "why_is_my_pc_doing_it_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sysinfo = "0.33"
+tauri = { version = "2", features = [] }

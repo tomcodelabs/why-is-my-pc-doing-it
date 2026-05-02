@@ -1,0 +1,195 @@
+:root {
+  color: #e5e7eb;
+  background: #0f1117;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 760px;
+  min-height: 100vh;
+  background: #0f1117;
+}
+
+button {
+  border: 1px solid #354052;
+  border-radius: 6px;
+  background: #1b2230;
+  color: #e5e7eb;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: #232b3a;
+  border-color: #4b5568;
+}
+
+button:disabled {
+  color: #7d8796;
+  cursor: default;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 100vh;
+  padding: 22px;
+}
+
+.app-header {
+  align-items: center;
+  border-bottom: 1px solid #252b3a;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 18px;
+}
+
+.app-header h1,
+.panel-header h2 {
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.app-header h1 {
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.app-header p,
+.panel-header p,
+.updated-at,
+.card-label,
+.card-detail {
+  color: #9ca3af;
+}
+
+.app-header p,
+.panel-header p {
+  margin: 5px 0 0;
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.updated-at {
+  font-size: 13px;
+}
+
+.notice {
+  border: 1px solid #5a4630;
+  border-radius: 6px;
+  background: #211b15;
+  color: #f5d48b;
+  padding: 10px 12px;
+}
+
+.overview-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.overview-card,
+.process-panel {
+  background: #141925;
+  border: 1px solid #252b3a;
+  border-radius: 8px;
+}
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 116px;
+  padding: 16px;
+}
+
+.card-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.overview-card strong {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.card-detail {
+  font-size: 13px;
+}
+
+.process-panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panel-header {
+  align-items: center;
+  border-bottom: 1px solid #252b3a;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.panel-header h2 {
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.process-table {
+  overflow: auto;
+}
+
+.process-row {
+  align-items: center;
+  border-bottom: 1px solid #202636;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(220px, 1fr) 96px 96px 120px;
+  min-height: 38px;
+  padding: 0 16px;
+}
+
+.process-row:last-child {
+  border-bottom: 0;
+}
+
+.process-heading {
+  background: #171b24;
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 34px;
+  position: sticky;
+  text-transform: uppercase;
+  top: 0;
+}
+
+.process-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

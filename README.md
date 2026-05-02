@@ -51,3 +51,7 @@ Network activity and ports will come later.
 ## Notes
 
 Runs locally on your machine.
+
+## License
+
+GPL-3.0
